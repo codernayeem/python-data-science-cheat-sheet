@@ -120,6 +120,7 @@ newarr = arr.reshape(2, 3, 2)  # reshaping to 3D array (2 * 3 * 2 = 12 = total e
 
 
 # Iterating
+arr = np.array([[3, 2, 4], [5, 0, 1]])
 for x in arr: # 2D array
   for y in x:
     print(y)
@@ -131,7 +132,7 @@ for x in np.nditer(arr):
 
 # Enumerated Iteration Using ndenumerate()
 for idx, x in np.ndenumerate(arr):
-  print(idx, x)
+  print('Index :', idx, 'Value :', x)
 
 
 
@@ -173,7 +174,7 @@ newarr = np.hsplit(arr, 3)              # same
 newarr = np.array_split(arr, 3, axis=0) # [array([[1, 2, 3], [4, 5, 6]]), array([[ 7,  8,  9], [10, 11, 12]]), array([[13, 14, 15], [16, 17, 18]])]
 newarr = np.vsplit(arr, 3)              # same
 # Spliting along Height (depth)
-newarr = np.dsplit(arr, 3) # height/depth split only works for 3 or higher dimension
+# newarr = np.dsplit(arr, 3) # height/depth split only works for 3 or higher dimension
 
 
 
@@ -201,7 +202,7 @@ print(np.sort(arr))  # [[2, 3, 4], [0, 1, 5]]
 
 # Filter
 arr = np.array([41, 42, 43, 44])
-x = arr[[True, False, True, False]]
+x = [True, False, True, False]
 newarr = arr[x] # [41, 43]
 
 filter_arr = arr > 42 # [False, False, True, True]
