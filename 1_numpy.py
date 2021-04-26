@@ -261,7 +261,6 @@ print(type(np.add)) # <class 'numpy.ufunc'>
 print(type(mycalc))  # <class 'numpy.ufunc'>
 
 
-
 # ufunc Simple Arithmetic
 arr1 = np.array([10, 11, 12, 13, 14, 15])
 arr2 = np.array([20, 21, 22, 23, 24, 25])
@@ -348,6 +347,14 @@ newarr = np.diff(arr) # [5 10 -20] because 15-10=5, 25-15=10, and 5-25=-20
 lcd = np.lcm.reduce(arr) # 150
 gcd = np.gcd.reduce(arr) # 5
 
+
+np.minimum([2, 3, 4], [1, 5, 2]) # array([1, 3, 2])
+np.maximum([2, 3, 4], [1, 5, 2]) # array([2, 5, 4])
+
+min_value = arr.min()
+max_value = arr.max()
+mean_value = arr.mean()
+print(arr.T)              # transpose
 
 
 # Sets in Numpy (A set in mathematics is a collection of unique elements)
