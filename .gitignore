@@ -5,4 +5,5 @@ __pycache__/
 .python
 .python-version
 
+.ipynb_checkpoints/
 data/
