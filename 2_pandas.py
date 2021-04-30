@@ -127,9 +127,15 @@ newdf2 = newdf.reset_index() # this will not drop the previous index, it will na
 newdf2 = newdf.reset_index(drop=True)
 
 
+# Get Value Counts
+mark_counts = df['mark'].value_counts()
+
+
+# Column rename:
+newdf = df.rename(columns = {'roll': 'roll_number', 'mark': 'result'}, inplace=False)
+
 
 # Some functions
-
 x = df["mark"].max()
 x = df["mark"].min()
 x = df["mark"].mean()
