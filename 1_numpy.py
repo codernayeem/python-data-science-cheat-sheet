@@ -216,6 +216,15 @@ arr = np.array([[3, 2, 4], [5, 0, 1]])
 newarr = arr[arr % 3 != 1] # [3 2 5 0]
 
 
+# Reversing / Fliping
+arr = np.array([41, 43, 42, 44])
+arr2 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+arr_flipped = np.flip(arr)          # array([44, 42, 43, 41])
+arr_flipped = np.flip(arr2)         # array([[9, 8, 7], [6, 5, 4], [3, 2, 1]])  | Flip in the both axis
+arr_flipped = np.flip(arr2, axis=0) # array([[7, 8, 9], [4, 5, 6], [1, 2, 3]])  | Flip the rows | Alt.: flipud()
+arr_flipped = np.flip(arr2, axis=1) # array([[3, 2, 1], [6, 5, 4], [9, 8, 7]])  | Flip only in the row | Alt.: fliplr ()
+
 
 # Random
 from numpy import random
