@@ -226,6 +226,7 @@ arr_flipped = np.flip(arr2, axis=0) # array([[7, 8, 9], [4, 5, 6], [1, 2, 3]])  
 arr_flipped = np.flip(arr2, axis=1) # array([[3, 2, 1], [6, 5, 4], [9, 8, 7]])  | Flip only in the row | Alt.: fliplr ()
 
 
+
 # Random
 from numpy import random
 arr = random.randint(100, size=(5)) # Generate a 1-D array containing 5 random integers from 0 to 100
@@ -246,6 +247,10 @@ arr = random.choice([3, 5, 7, 9], p=[0.1, 0.3, 0.6, 0.0], size=(3, 5)) # 2D arra
 arr = np.array([1, 2, 3, 4, 5])
 random.shuffle(arr) # shuffle changes orginial array
 newarr = random.permutation(arr)
+
+
+x = np.random.uniform(0.0, 5.0, 250) # low : 0.0  &  high : 5.0  &  size : 250
+x = np.random.normal(5.0, 1.0, 1000) # mean : 5.0  &  std: 1.0  &  size : 1000
 
 
 
@@ -357,14 +362,28 @@ newarr = np.diff(arr) # [5 10 -20] because 15-10=5, 25-15=10, and 5-25=-20
 lcd = np.lcm.reduce(arr) # 150
 gcd = np.gcd.reduce(arr) # 5
 
-
+# Compare two arrays and returns a new array containing the element-wise minima
 np.minimum([2, 3, 4], [1, 5, 2]) # array([1, 3, 2])
+# Compare two arrays and returns a new array containing the element-wise maxima
 np.maximum([2, 3, 4], [1, 5, 2]) # array([2, 5, 4])
 
 min_value = arr.min()
 max_value = arr.max()
-mean_value = arr.mean()
 print(arr.T)              # transpose
+
+
+
+# Statistics
+mean = np.mean(arr)      # avarage value
+median = np.median(arr)  # the midest value
+
+std = np.std(arr)        # Standard Deviation
+var = np.var(arr)        # Variance
+
+ages = [5,31,43,48,50,41,7,11,15,39,80,82,32,2,8,6,25,36,27,61,31]
+x = numpy.percentile(ages, 75)
+# What is the 75 percentile? The answer is 43, meaning that 75% of the people are 43 or younger.
+
 
 
 # Sets in Numpy (A set in mathematics is a collection of unique elements)
