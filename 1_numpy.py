@@ -70,10 +70,12 @@ c = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]], dtype='i4') # integer with 4 b
 c = np.array([[1.5, 2, 3.5, 4, 5], [6, 0.4, 8, 9.1, 10]], dtype=np.float32) # folat with 32 bytes
 c = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]], dtype=np.int16) # integer with 16 bytes (-32768 to 32767)
 
-array1 = np.zeros((3, 4), dtype=int) # shape : (3, 4)
-array2 = np.ones((3, 4), dtype=int) # shape : (3, 4)
-array3 = np.full((3, 4), 5, dtype=int) # shape : (3, 4)
-array43 = np.arange(1, 6) # [1, 2, 3, 4, 5]
+array1 = np.zeros((3, 4), dtype=int)   # array([[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])
+array2 = np.ones((3, 4), dtype=int)    # array([[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]])
+array3 = np.full((3, 4), 5, dtype=int) # array([[5, 5, 5, 5], [5, 5, 5, 5], [5, 5, 5, 5]])
+array3 = np.eye(3) # array([[1., 0., 0.], [0., 1., 0.], [0., 0., 1.]])
+array4 = np.arange(1, 6) # [1, 2, 3, 4, 5]
+array5 = np.arange(12).reshape(3, 4) # array([[ 0,  1,  2,  3], [ 4,  5,  6,  7], [ 8,  9, 10, 11]])
 
 array = np.array([[2, 5, 9], [5, 8, 3]]) # 2D array (metrics)
 print('Array :', array)
@@ -381,7 +383,7 @@ std = np.std(arr)        # Standard Deviation
 var = np.var(arr)        # Variance
 
 ages = [5,31,43,48,50,41,7,11,15,39,80,82,32,2,8,6,25,36,27,61,31]
-x = numpy.percentile(ages, 75)
+x = np.percentile(ages, 75)
 # What is the 75 percentile? The answer is 43, meaning that 75% of the people are 43 or younger.
 
 
